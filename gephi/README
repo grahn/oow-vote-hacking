@@ -1,0 +1,28 @@
+mix_voters.gephi - grahn's version
+mix_voters_weighted_edges.gephi - used vote count as edge weight (grahn)
+oow_voters.gephi - neilkod's first cut version
+
+
+If you use MySQL you can use the following queries to import the data into Gephi.
+I use user_id*10 for authors so the ids do not overlap - Gephi complained about this.
+
+-- nodes query
+-- get list of voters and authors
+select a.user_id as id, a.name as label, 'voter' as type
+from users a, all_votes b
+where a.user_id = b.user_id
+group by a.user_id, a.name
+union all
+select a.user_id *10 as id, a.name as label, 'author' as type
+from users a, sessions b
+where a.user_id = b.user_id
+group by a.user_id, a.name
+
+-- edges query 
+-- voter = source, author = target
+select a.user_id as source, b.user_id *10 as target, count(*) as weight
+from all_votes a, sessions b
+where a.session_id = b.session_id
+group by 1,2
+order by 3,1,2
+

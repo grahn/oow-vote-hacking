@@ -1,0 +1,9 @@
+all_votes.dat          - 100% of the votes placed
+authors.dat            - scrape of session authors
+final_vote_count.dat   - scrape of number of votes from each page
+sessions.dat           - scrape of sessions
+users.dat              - scrape of users who voted and augmented by hand to include authors who did not vote
+votes.dat              - scrape of votes, up to 100 per session (that's all that was displayed on session page)
+votes_denormalized.dat - flat view of votes/sessions/voters/authors
+
+load_data.sql          - simple script to load data into MySQL

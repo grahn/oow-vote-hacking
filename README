@@ -1,4 +1,11 @@
-super-new, super-hacky. description coming
-load the oow.gdf into gephi to visualize the data
-data provided by @gregrahn
-will provide updated data as I get it.
+Some background on the project:
+http://structureddata.org/2011/06/23/data-science-fun-with-the-oow-mix-session-voting-data/
+
+Directories:
+analysis         - queries, etc.
+data             - raw data sets (scrapes/exports)
+gephi            - Gephi projects and screen captures
+scraping_scripts - Scripts used to scrape the data
+
+Shouts out to @neilkod for his help with Gephi and other collobration.
+
